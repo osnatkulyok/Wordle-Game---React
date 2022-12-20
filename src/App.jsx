@@ -29,16 +29,15 @@ function App() {
   const onSelectLetter = (keyValue) => {
     if (currentAttempt.letterPosition > 4) {
       console.log('DONE')
+    } else {
+      const newBoard = [...board]
+      newBoard[currentAttempt.attempt][currentAttempt.letterPosition] = keyValue
+      setBoard(newBoard)
+      setCurrentAttempt({
+        ...currentAttempt,
+        letterPosition: currentAttempt.letterPosition + 1,
+      })
     }
-    return
-    return
-    const newBoard = [...board]
-    newBoard[currentAttempt.attempt][currentAttempt.letterPosition] = keyValue
-    setBoard(newBoard)
-    setCurrentAttempt({
-      ...currentAttempt,
-      letterPosition: currentAttempt.letterPosition + 1,
-    })
   }
 
   const onDelete = () => {

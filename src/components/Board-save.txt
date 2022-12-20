@@ -1,0 +1,67 @@
+import React, { useState, useRef, useEffect } from 'react'
+import Letter from './Letter'
+
+function Board() {
+  // Create a ref for each element
+  const element1Ref = useRef()
+  const element2Ref = useRef()
+  const element3Ref = useRef()
+  const element4Ref = useRef()
+  const element5Ref = useRef()
+
+  // Set focus on the first element when the component mounts
+  useEffect(() => {
+    element1Ref.current.focus()
+  }, [])
+
+  return (
+    <div className="board">
+      {/* letterPosition = place in the line
+        attempValue = whiche line */}
+      <div className="row">
+        <Letter letterPosition={0} attempValue={0} ref={element1Ref} />
+        <Letter letterPosition={1} attempValue={0} ref={element2Ref} />
+        <Letter letterPosition={2} attempValue={0} ref={element3Ref} />
+        <Letter letterPosition={3} attempValue={0} ref={element4Ref} />
+        <Letter letterPosition={4} attempValue={0} ref={element5Ref} />
+      </div>
+      <div className="row">
+        <Letter letterPosition={0} attempValue={1} ref={element1Ref} />
+        <Letter letterPosition={1} attempValue={1} ref={element2Ref} />
+        <Letter letterPosition={2} attempValue={1} ref={element3Ref} />
+        <Letter letterPosition={3} attempValue={1} ref={element4Ref} />
+        <Letter letterPosition={4} attempValue={1} ref={element5Ref} />
+      </div>
+      <div className="row">
+        <Letter letterPosition={0} attempValue={2} ref={element1Ref} />
+        <Letter letterPosition={1} attempValue={2} ref={element2Ref} />
+        <Letter letterPosition={2} attempValue={2} ref={element3Ref} />
+        <Letter letterPosition={3} attempValue={2} ref={element4Ref} />
+        <Letter letterPosition={4} attempValue={2} ref={element5Ref} />
+      </div>
+      <div className="row">
+        <Letter letterPosition={0} attempValue={3} ref={element1Ref} />
+        <Letter letterPosition={1} attempValue={3} ref={element2Ref} />
+        <Letter letterPosition={2} attempValue={3} ref={element3Ref} />
+        <Letter letterPosition={3} attempValue={3} ref={element4Ref} />
+        <Letter letterPosition={4} attempValue={3} ref={element5Ref} />
+      </div>
+      <div className="row">
+        <Letter letterPosition={0} attempValue={4} ref={element1Ref} />
+        <Letter letterPosition={1} attempValue={4} ref={element2Ref} />
+        <Letter letterPosition={2} attempValue={4} ref={element3Ref} />
+        <Letter letterPosition={3} attempValue={4} ref={element4Ref} />
+        <Letter letterPosition={4} attempValue={4} ref={element5Ref} />
+      </div>
+      <div className="row">
+        <Letter letterPosition={0} attempValue={5} ref={element1Ref} />
+        <Letter letterPosition={1} attempValue={5} ref={element2Ref} />
+        <Letter letterPosition={2} attempValue={5} ref={element3Ref} />
+        <Letter letterPosition={3} attempValue={5} ref={element4Ref} />
+        <Letter letterPosition={4} attempValue={5} ref={element5Ref} />
+      </div>
+    </div>
+  )
+}
+
+export default Board

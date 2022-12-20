@@ -1,0 +1,68 @@
+Key.jsx
+
+import React, { useContext } from 'react'
+import { AppContext } from '../App'
+
+function Key({ keyValue, bigKey }) {
+  const {
+    board,
+    setBoard,
+    currentAttempt,
+    setCurrentAttempt,
+    onSelectLetter,
+    onDelet,
+    onEnter,
+  } = useContext(AppContext)
+
+  const selectLetter = () => {
+    //some base case condition
+    if (keyValue === 'ENTER') {
+      // do not leave an empty line
+      if (currentAttempt.letterPosition !== 5) return
+      //   now we mooving verticly
+      setCurrentAttempt({
+        attempt: currentAttempt.attempt + 1,
+        letterPosition: 0,
+      })
+    }
+    // in case the key is delete and not enter
+    else if (keyValue === 'DELETE') {
+      //in case there is no letter
+      if (currentAttempt.letterPosition === 0) return
+      const newBoard = [...board]
+      newBoard[currentAttempt.attempt][currentAttempt.letterPosition - 1] = ''
+      //because we already went back and change stuff, we have to update the whole letter-board's setting
+      setBoard(newBoard)
+      //reset the pointer
+      setCurrentAttempt({
+        ...currentAttempt,
+        letterPosition: currentAttempt.letterPosition - 1,
+      })
+    } else {
+      if (currentAttempt.letterPosition > 4) return
+      //TODO   alert('Hey buddy, you have reached a word')
+
+      //creating an instance board
+      const newBoard = [...board]
+      //set the position of the pointer to be in the right/current place by the keyValue. as the same we did in the letter board, it needs 2 parameters; 1. what line. 2. in the line.
+      newBoard[currentAttempt.attempt][currentAttempt.letterPosition] = keyValue
+      // setting the letters' board to contain the letter in the current position the user needs to be on
+      setBoard(newBoard)
+      //letterPosition: letterPosition + 1 = mooving horizontaly
+      setCurrentAttempt({
+        ...currentAttempt,
+        letterPosition: currentAttempt.letterPosition + 1,
+      })
+    }
+  }
+
+  // we will also want to add some funcuallity for 'enter' & delete keys
+  return (
+    // id => if letter make it as key class if enter/delete add width by adding uniqe id
+    <div className="key" id={bigKey && 'big'} onClick={selectLetter}>
+      {keyValue}
+    </div>
+  )
+}
+
+export default Key

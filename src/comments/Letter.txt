@@ -1,0 +1,16 @@
+import React, { useContext } from 'react'
+import { AppContext } from '../App'
+
+//letterPosition & attempValue will be a way for us to get what each letter represnt
+//letterPosition = place in the line
+//attempValue = whiche line
+function Letter({ letterPosition, attempValue }) {
+  // the way to contect with useContext information
+  const { board } = useContext(AppContext)
+  //const letter = will give us an access to each letter individually
+  const letter = board[attempValue][letterPosition]
+  //this will be any letter the user will fill/press
+  return <div className="letter">{letter}</div>
+}
+
+export default Letter

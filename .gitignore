@@ -3,7 +3,9 @@
 # dependencies
 /node_modules
 /.pnp
+/comments
 .pnp.js
+.Board-save.txt
 
 # testing
 /coverage

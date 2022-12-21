@@ -1,8 +1,9 @@
-import './App.css'
+import './style/App.css'
 import Board from './components/Board'
 import Keyboard from './components/Keyboard'
 import { createContext, useState, useEffect } from 'react'
 import { boardDefalt, generateWordSet } from './words'
+import Layout from './components/Layout'
 // import 'core-js/fn/array/find'
 
 //the way to give an access/transform the props to the information I want, to each component in the project that place inside that func.
@@ -27,7 +28,16 @@ function App() {
   }, [])
 
   const onSelectLetter = (keyValue) => {
-    if (currentAttempt.letterPosition > 4) {
+    if (currentAttempt.letterPosition === 4) {
+      console.log('DONE')
+      const newBoard = [...board]
+      newBoard[currentAttempt.attempt][currentAttempt.letterPosition] = keyValue
+      setBoard(newBoard)
+      setCurrentAttempt({
+        ...currentAttempt,
+        letterPosition: currentAttempt.letterPosition + 1,
+      })
+    } else if (currentAttempt.letterPosition > 4) {
       console.log('DONE')
     } else {
       const newBoard = [...board]
@@ -76,9 +86,9 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <nav>
-        <h1>WORDLE</h1>
+    <div className="myApp">
+      <nav className="navbar">
+        <Layout />
       </nav>
       {/* the 'value' thing is using api context in order to provide an access to the info anywhere inside the AppContext */}
       <AppContext.Provider

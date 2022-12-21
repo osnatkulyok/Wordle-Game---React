@@ -5,37 +5,42 @@
     text-align: center;
     font-size: 36px;
   }
+
   .AppHeader-module_appHeader__1Ehyv button.AppHeader-module_icon__x7b46 {
     padding: 0 6px;
   }
 }
+
 @media (min-width: 768px) {
   .AppHeader-module_appHeader__1Ehyv .AppHeader-module_title__6sqs- {
     text-align: center;
     font-size: 32px;
   }
+
   .AppHeader-module_appHeader__1Ehyv .AppHeader-module_menuLeft__iErDO,
-.AppHeader-module_appHeader__1Ehyv .AppHeader-module_menuRight__jUeYn {
+  .AppHeader-module_appHeader__1Ehyv .AppHeader-module_menuRight__jUeYn {
     width: 120px;
   }
 }
+
 @media (min-width: 768px) and (min-width: 1024px) {
   .AppHeader-module_appHeader__1Ehyv .AppHeader-module_title__6sqs- {
     font-size: 36px;
   }
 }
+
 @media (min-width: 768px) {
   #AppHeader-module_navButton__fB5nf {
     padding-top: 2px;
     padding-left: 0px;
   }
 }
-.App {
+
+.myApp {
   text-align: center;
   background-color: #121212;
   width: 100vw;
   height: 100vh;
-  /* display: flex; */
   color: white;
 }
 
@@ -49,7 +54,6 @@ nav {
   width: 100%;
   margin: 0;
   border-bottom: 1px solid grey;
-  display: grid;
   place-items: center;
 }
 
@@ -58,10 +62,18 @@ nav h1 {
   font-family: Helvetica, Arial, sans-serif;
   color: white;
   font-size: 45px;
+
+  &:hover {
+    color: palevioletred;
+  }
 }
-nav h1:hover {
-  color: palevioletred;
+
+.navbar {
+  background-color: rgb(90, 25, 25);
 }
+
+
+
 
 .game {
   width: 100vw;
@@ -70,12 +82,13 @@ nav h1:hover {
   align-items: center;
   padding-top: 50px;
   flex-direction: column;
+  background-color: #333433;
 }
 
 .board {
   width: 450px;
   height: 550px;
-  border: 1px solid black;
+  // border: 1px solid black;
   display: flex;
   flex-direction: column;
 }
@@ -90,17 +103,16 @@ nav h1:hover {
 .letter {
   flex: 33%;
   height: 100%;
-  border: 1px solid grey;
+  border: 1.5px solid rgb(231, 212, 212);
   margin: 5px;
   display: grid;
   place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: bolder;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.letter:hover {
-  background-color: rgb(107, 68, 93);
+  filter: drop-shadow(3px 3px 3px);
+  -webkit-filter: drop-shadow(3px 3px 3px);
 }
 
 #correct {
@@ -150,6 +162,7 @@ nav h1:hover {
   width: 50px;
   height: 65px;
   margin: 5px;
+  // border: 2px solid black;
   border-radius: 4px;
   display: grid;
   place-items: center;
@@ -158,10 +171,13 @@ nav h1:hover {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
-}
-.key:hover {
-  color: rgb(0, 0, 0);
-  background-color: rgb(98, 93, 93);
+
+  &:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(98,
+        93,
+        93);
+  }
 }
 
 #big {
@@ -170,4 +186,4 @@ nav h1:hover {
 
 #disabled {
   background-color: #3a393c;
-}/*# sourceMappingURL=App.css.map */
+}

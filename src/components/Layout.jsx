@@ -1,12 +1,12 @@
-import './index.css'
-import { WelcomeUser } from './components/Welcome'
+import '../style/index.css'
+// import { WelcomeUser } from './Welcome'
 
-function App() {
+function Layout() {
   return (
     <div className="App">
       <header class="AppHeader-module_appHeader__1Ehyv wordle-app-header">
         <div>
-          <button>
+          <button id="wins">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -27,7 +27,7 @@ function App() {
           <button
             type="button"
             id="help-button"
-            class="AppHeader-module_icon__x7b46"
+            class="AppHeader-module_icon__x7b46 "
             aria-label="Help"
           >
             <svg
@@ -47,7 +47,7 @@ function App() {
           <button
             type="button"
             id="statistics-button"
-            class="AppHeader-module_icon__x7b46"
+            class="AppHeader-module_icon__x7b46 "
             aria-label="Statistics"
           >
             <svg
@@ -67,7 +67,7 @@ function App() {
           <button
             type="button"
             id="settings-button"
-            class="AppHeader-module_icon__x7b46"
+            class="AppHeader-module_icon__x7b46 buttons"
             aria-label="Settings"
           >
             <svg
@@ -86,9 +86,9 @@ function App() {
           </button>
         </div>
       </header>
-      <WelcomeUser />
+      {/* <WelcomeUser /> */}
     </div>
   )
 }
 
-export default App
+export default Layout

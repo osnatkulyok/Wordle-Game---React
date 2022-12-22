@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+# Final Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Product Requirement Document (PRD)
 
-## Available Scripts
+* [Overview](#overview)
+    + [Wordle Game](#wordle-game)
+* [Requirements](#requirements)
+* [Features/User Stories](#features-user-stories)
+    + [The Form](#the-form)
+    + [Interactions](#interactions)
+    + [Reactify](#reactify)
+    + [Layout](#layout)
+    + [Game Logic On Single Line](#game-logic-on-single-line)
+    + [UI Testing](#ui-testing)
+    + [Full Front End Game Logic](#full-front-end-game-logic)
+    + [Users](#users)
 
-In the project directory, you can run:
+## Overview
 
-### `yarn start`
+This document describes a “Wordle” game development in order to participate in a full cycle of web development.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project was structured to support and guide our web development study path.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Wordle Game
 
-### `yarn test`
+Wordle is a Bull & Cows style word game. The user is required to guess a randomly selected word in N turns. The
+application gets each guess as input and provides clues for the next guess.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+An example to a “Wordle” game:
 
-### `yarn build`
+* [Hebrew version - Haaretz](https://www.haaretz.co.il/riddles/ty-page/haaretz-wordle)
+* [English version - NYT](https://www.nytimes.com/games/wordle/index.html)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requirements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Till another decision - Typescript and javascript are allowed.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    We use user stories to describe our application requirements. Each user story contains a list of tasks required to complete it.
+    There are several ways to write user stories. I chose a template that describes the product from the point of view of a user who tries to use the application.
 
-### `yarn eject`
+| Requirement                                                           | Category          | Target            |
+|-----------------------------------------------------------------------|-------------------|-------------------|
+| Milestone A                                                           |                   |                   | 
+| [Navigating to the page will display a static wordle game](#the-form) | npm, HTML, CSS    | :computer:        | 
+| [The user should be able to enter a word](#interactions)              | HTML, CSS, JS     | :computer:        | 
+| [The user should not notify we changed the implementation](#reactify) | Static React      | :computer: :herb: |                                                          
+| Milestone B                                                           |                   |                   | 
+| [User should start with welcome and have some help](#layout)          | Routing, Modal    | :computer: :herb: | 
+| [User can play](#full-front-end-game-logic)                           | State             | :computer: :herb: | 
+| [Let me connect](#users)                                              | Forms and storage | :computer: :herb: | 
+| Milestone C                                                           |                   |                   |
+| [Let the server choose the word](#choose-word)                        | Express           | :factory: :herb:  |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* :computer: Client Side
+* :herb: React
+* :factory: Server Side
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features/User Stories
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### The Form
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigating to the page will display a static “Wordle” game.
 
-## Learn More
+* [x] Prepare your development environment
+* [x] Implement game HTML page (see example below)
+* [x] Add style to the page (choose your own)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Mock ](assets/wordle-mock.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Interactions
 
-### Code Splitting
+* [x] After page loaded, the focus should be at the first input
+* [x] Allow user to enter single letter:
+    - Only letters
+    - Move focus to the next input in the same row
+    - After the last letter show dialog “done”
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Reactify
 
-### Analyzing the Bundle Size
+* [ ] Split the page into components
+* [ ] Refactor the page into static React components
+    - Consider use the React [tools](https://beta.reactjs.org/learn/start-a-new-react-project)
+    - Provide "start" script to run the project (`npm start` to run your project)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Layout
 
-### Making a Progressive Web App
+* [ ] Welcome screen
+    * First navigating to the game will the display the welcome
+    * The screen should contain the text "Welcome user!"
+    * You should choose how to style this page (animation, video, just text)
+* [ ] Topbar
+    * Should contain header/name and a link/button to display the help screen
+* [ ] Help screen
+    * Should be [modal popup](https://en.wikipedia.org/wiki/Modal_window)
+    * Should close only by clicking X at the top corner or clicking "ESC" in the keyboard
+    * You should choose how to explain the game
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Layout Examples
 
-### Advanced Configuration
+Welcome Screen
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Welcome Screen](./assets/wordle-mock-welcome.png)
 
-### Deployment
+Top Bar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![Top Bar](./assets/wordle-mock-topbar.png)
 
-### `yarn build` fails to minify
+### Game Logic On Single Line
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [ ] Choose word (static)
+* [ ] Starting at the first line
+* [ ] After the last letter check the input against the select word and mark the inputs
+    * Bull => green background
+    * Cow => yellow background
+* [ ] Mark all guessed letters in the virtual keyboard
+* [ ] If all letters are Bull display dialog "success"
+
+### UI Testing
+
+TBD
+
+### Full Front End Game Logic
+
+* [ ] For all lines
+    * [ ] After finish line logic, put the focus on the first character of the next line
+    * [ ] Do single line logic
+* [ ] If no success, display dialog "fail"
+
+### Users
+
+* [ ] login link/button at the topbar
+    * [ ] Show modal with login form (name) and login button that close the modal
+    * [ ] Keep the username locally (browser)
+* [ ] Change the welcome screen to greet the user by his name if any, else use "guest"
+* [ ] After login, the topbar should contain the username and a logout link/button
+* [ ] The logout link/button should delete username locally
+
+### Choose Word
+
+TBD
+
+---
+
+:globe_with_meridians:
+
+
+---
+
+<!--
+### Playground with assets for this document
+
+<img src="docs/wordle-logo.svg" width="800" height="400" alt="Logo">
+
+<img src="https://github.com/grunitech/final-project/blob/main/docs/wordle-mock-welcome.png" width="30">
+
+<img src="https://github.com/grunitech/final-project/blob/main/docs/wordle-mock-welcome.png" style="width: 100px">
+-->

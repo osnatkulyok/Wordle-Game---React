@@ -104,6 +104,10 @@ nav h1:hover {
   -webkit-filter: drop-shadow(3px 3px 3px);
 }
 
+.selected {
+  background-color: rgb(90, 25, 25);
+}
+
 #correct {
   background-color: #528d4e;
 }

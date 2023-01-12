@@ -13,8 +13,17 @@ function Letter({ letterPosition, attempValue }) {
   const letterState =
     currentAttempt.attempt > attempValue &&
     (correct ? 'correct' : almost ? 'almost' : 'error')
+
+  let isSelected = false
+
+  if (
+    letterPosition == currentAttempt.letterPosition &&
+    attempValue == currentAttempt.attempt
+  ) {
+    isSelected = true
+  }
   return (
-    <div className="letter" id={letterState}>
+    <div className={isSelected ? 'letter selected' : 'letter'} id={letterState}>
       {letter}
     </div>
   )

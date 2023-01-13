@@ -1,0 +1,88 @@
+.AppHeader-module_appHeader__1Ehyv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    padding: 0px var(--header-padding-x);
+    height: 65px;
+    color: var(--color-tone-1);
+    // border-bottom: 5px solid white;
+
+    // background-color: aqua;
+    #wins {
+        margin-left: 7px;
+    }
+
+    #wins_collection {
+        width: 24px;
+        height: 24px;
+        border: none;
+        cursor: pointer;
+
+    }
+
+}
+
+.AppHeader-module_appHeader__1Ehyv button:focus-visible {
+    outline: 2px solid var(--outline-focus);
+}
+
+.AppHeader-module_appHeader__1Ehyv button.AppHeader-module_icon__x7b46 {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.AppHeader-module_appHeader__1Ehyv button.AppHeader-module_icon__x7b46:last-child {
+    padding-right: 0;
+}
+
+
+.AppHeader-module_appHeader__1Ehyv .AppHeader-module_title__6sqs- {
+    flex-grow: 2;
+    margin-top: 5px;
+    margin-left: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    left: 0;
+    right: 0;
+    color: white;
+    pointer-events: none;
+    position: relative;
+
+
+    &:hover {
+        color: palevioletred;
+    }
+
+
+}
+
+.buttons {
+    margin-right: 12px;
+}
+
+// .AppHeader-module_menuLeft__iErDO {
+//   display: flex;
+
+//   margin: 0;
+//   padding: 0;
+//   align-items: center;
+//   justify-content: flex-start;
+// }
+
+// .AppHeader-module_menuRight__jUeYn {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
+// #AppHeader-module_navButton__fB5nf {
+//   padding-top: 2px;
+//   padding-left: 0px;
+//   padding-right: 13px;
+// }

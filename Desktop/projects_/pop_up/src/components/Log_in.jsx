@@ -1,7 +1,10 @@
 import React from 'react'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useContext } from 'react'
+import { AuthContext } from '../context/AuthProvider'
 
 export function Log_in() {
+  const { setAuth } = useContext(AuthContext)
+
   //to set the focus on that first input
   const userRef = useRef()
   //to set the focus on the error
@@ -14,7 +17,7 @@ export function Log_in() {
 
   //to set the focus on that first input
   useEffect(() => {
-    useRef.current.focus()
+    userRef.current.focus()
   }, [])
 
   //to empty out any error we might have or in case the input wasn,t fullfilled
@@ -32,9 +35,12 @@ export function Log_in() {
 
   return (
     <>
+      {/* TODO set a user name blassing */}
+      <h1 className="blassTittle">WELCOME TO WORDLE GAME</h1>
       {success ? (
-        <section>
+        <section className="form logged">
           <h1>You are logged in!</h1>
+          <br />
           <br />
           <p>
             {/*TODO-- put wordle game link here  */}
@@ -42,7 +48,7 @@ export function Log_in() {
           </p>
         </section>
       ) : (
-        <section>
+        <section className="form">
           {/* ment on a webpage should be read by a screen reader as soon as the
       content of the element changes. */}
           <p
@@ -52,12 +58,13 @@ export function Log_in() {
           >
             {errorMessage}
           </p>
-          <h1>Sign In</h1>
+          <h1 className="title">Sign In</h1>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="userName">UserName</label>
+            <label htmlFor="userName">UserName:</label>
             <input
               type="text"
               id="userName"
+              className="input"
               ref={userRef}
               autoComplete="off"
               onChange={(e) => setUser(e.target.value)}
@@ -65,15 +72,16 @@ export function Log_in() {
               required
             />
 
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
+              className="input"
               id="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               required
             />
-            <button>Sign In</button>
+            <button className="input button">Sign In</button>
           </form>
           <p>
             Need an Account?

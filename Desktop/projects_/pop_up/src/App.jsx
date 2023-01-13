@@ -1,13 +1,14 @@
-import logo from './logo.svg'
-import './App.css'
 import React from 'react'
+import './App.css'
+import { Layout } from './layoutStuff/Layout'
 import { Log_in } from './components/Log_in'
 
 function App() {
   return (
-    <main>
+    <section>
+      <Layout />
       <Log_in />
-    </main>
+    </section>
   )
 }
 

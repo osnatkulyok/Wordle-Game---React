@@ -2,35 +2,73 @@ import React from 'react'
 import { useRef, useState, useEffect, useContext } from 'react'
 import AuthContext from '../context/AuthProvider'
 
+import axios from '../api/axios' // import axios library for making API calls
+const LOGIN_URL = '/auth' // define the login endpoint
+
 export function Log_in() {
+  // Destructure the setAuth function from the AuthContext
   const { setAuth } = useContext(AuthContext)
 
-  //to set the focus on that first input
+  // Create a ref for the user input field
   const userRef = useRef()
-  //to set the focus on the error
+  // Create a ref for the error message
   const errorRef = useRef()
 
+  // Create state variables for the user, password, error message, and success status
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [success, setSuccess] = useState(false)
 
-  //to set the focus on that first input
+  // Use the useEffect hook to set focus on the user input field when the component mounts
   useEffect(() => {
     userRef.current.focus()
   }, [])
 
-  //to empty out any error we might have or in case the input wasn,t fullfilled
+  // Use the useEffect hook to clear the error message when the user or password state variables change
   useEffect(() => {
     setErrorMessage('')
   }, [user, password])
 
+  // Define a function to handle the form submission
   const handleSubmit = async (e) => {
+    // Prevent the default form behavior
     e.preventDefault()
-    console.log(user, password)
-    setUser('')
-    setPassword('')
-    setSuccess(true)
+
+    try {
+      // Make a post request to the login url with the user and password data
+      const response = await axios.post(
+        LOGIN_URL,
+        JSON.stringify({ user, password }),
+        {
+          headers: { 'Content-Type': 'application/json' }, // set the headers for the request
+          withCredentials: true, // include credentials in the request
+        },
+      )
+      // Extract the access token and roles from the response data
+      const accessToken = response?.data?.accessToken
+      const roles = response?.data.roles
+      // Pass the user, password, roles, and access token to the setAuth function
+      setAuth({ user, password, roles, accessToken })
+      // Clear the user and password state variables
+      setUser('')
+      setPassword('')
+      // Set the success status to true
+      setSuccess(true)
+    } catch (error) {
+      // Check the error status and set the error message accordingly
+      if (!error?.response) {
+        setErrorMessage('NO SERVER RESPONSE')
+      } else if (error.response?.status === 400) {
+        setErrorMessage('MIISING USERNAME OR PASSWORD')
+      } else if (error.response?.status === 401) {
+        setErrorMessage('Unauthorized')
+      } else {
+        setErrorMessage('Login Failed')
+      }
+      // Focus on the error message
+      errorRef.current.focus()
+    }
   }
 
   return (

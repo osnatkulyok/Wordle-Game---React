@@ -1,0 +1,78 @@
+body {
+  background-image: url("../img/timeOut.webp");
+}
+body a {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  -moz-text-decoration-line: none;
+}
+
+.timeOut {
+  display: flex;
+  justify-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-style: oblique;
+  font-weight: bold;
+  font-stretch: narrower;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  margin-top: 30%;
+  margin-left: 35%;
+  max-width: 400px;
+  max-height: 50px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border: 3px solid black;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.title {
+  display: block;
+  background-color: rgb(237, 210, 59);
+  color: rgb(30, 21, 4);
+  border: 3px solid rgb(230, 135, 11);
+  border-style: hidden;
+  border-radius: 7px;
+  box-shadow: 0 8px 23px rgba(0, 0, 0, 0.8);
+  animation: forwards;
+  -webkit-animation: forwards;
+  padding: 20px 30px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 230 px;
+  height: 140px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20px;
+}
+.title svg {
+  width: 40px;
+  height: 40px;
+}
+
+.cancel {
+  border: none;
+  background-color: rgb(237, 210, 59);
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+.cancel svg {
+  width: 35px;
+  height: 35px;
+}/*# sourceMappingURL=winner.css.map */

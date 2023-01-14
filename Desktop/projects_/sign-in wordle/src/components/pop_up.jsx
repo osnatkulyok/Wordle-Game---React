@@ -211,7 +211,7 @@ export function PopUp() {
     setShowPopUp(false)
   }
 
-  // useEffect hook to set the state to show the pop-up after 2 seconds
+  // useEffect hook to set the state to show the pop-up after 1 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopUp(true)

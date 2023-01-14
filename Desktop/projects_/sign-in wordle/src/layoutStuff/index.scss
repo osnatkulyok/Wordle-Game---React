@@ -9,7 +9,8 @@
     color: var(--color-tone-1);
     // border-bottom: 5px solid white;
 
-    // background-color: aqua;
+    background-color: brown;
+
     #wins {
         margin-left: 7px;
     }
@@ -56,6 +57,8 @@
     position: relative;
 
 
+
+
     &:hover {
         color: palevioletred;
     }
@@ -68,13 +71,14 @@
 }
 
 // .AppHeader-module_menuLeft__iErDO {
-//   display: flex;
+//     display: flex;
 
-//   margin: 0;
-//   padding: 0;
-//   align-items: center;
-//   justify-content: flex-start;
-// }
+//     margin: 0;
+//     padding: 0;
+//     align-items: center;
+//     justify-content: flex-start;
+//     background-color: cadetblue;
+//}
 
 // .AppHeader-module_menuRight__jUeYn {
 //   display: flex;

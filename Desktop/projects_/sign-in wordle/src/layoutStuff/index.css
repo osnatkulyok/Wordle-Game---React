@@ -7,6 +7,7 @@
   padding: 0px var(--header-padding-x);
   height: 65px;
   color: var(--color-tone-1);
+  background-color: brown;
 }
 .AppHeader-module_appHeader__1Ehyv #wins {
   margin-left: 7px;

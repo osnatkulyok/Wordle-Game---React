@@ -3,13 +3,15 @@ import './App.css'
 import { Layout } from './layoutStuff/Layout'
 import { Log_in } from './components/Log_in'
 import { PopUp } from './components/pop_up'
+import { Winner } from './components/Winner'
 
 function App() {
   return (
     <section>
-      <PopUp />
+      <Winner />
+      {/* <PopUp />
       <Layout />
-      <Log_in />
+      <Log_in /> */}
     </section>
   )
 }

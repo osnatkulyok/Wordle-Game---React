@@ -34,7 +34,6 @@ export function Log_in() {
   const handleSubmit = async (e) => {
     // Prevent the default form behavior
     e.preventDefault()
-
     try {
       // Make a post request to the login url with the user and password data
       const response = await axios.post(
@@ -45,9 +44,11 @@ export function Log_in() {
           withCredentials: true, // include credentials in the request
         },
       )
+      console.log(response)
       // Extract the access token and roles from the response data
       const accessToken = response?.data?.accessToken
       const roles = response?.data.roles
+
       // Pass the user, password, roles, and access token to the setAuth function
       setAuth({ user, password, roles, accessToken })
       // Clear the user and password state variables
@@ -55,6 +56,7 @@ export function Log_in() {
       setPassword('')
       // Set the success status to true
       setSuccess(true)
+      console.log(success)
     } catch (error) {
       // Check the error status and set the error message accordingly
       if (!error?.response) {
@@ -77,7 +79,7 @@ export function Log_in() {
       <h1 className="blassTittle">WELCOME TO WORDLE GAME</h1>
       {success ? (
         <section className="form logged">
-          <h1>You are logged in!</h1>
+          <h1>Hey {}, you are logged in!</h1>
           <br />
           <br />
           <p>

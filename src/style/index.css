@@ -52,6 +52,14 @@
   color: palevioletred;
 }
 
+#wordleTitle {
+  text-align: left;
+}
+
 .buttons {
   margin-right: 12px;
+}
+
+.AppHeader-module_menuRight__jUeYn {
+  display: flex;
 }/*# sourceMappingURL=index.css.map */

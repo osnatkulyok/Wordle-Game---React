@@ -41,6 +41,7 @@
 
 
 .AppHeader-module_appHeader__1Ehyv .AppHeader-module_title__6sqs- {
+
     flex-grow: 2;
     margin-top: 5px;
     margin-left: 15px;
@@ -59,12 +60,18 @@
     &:hover {
         color: palevioletred;
     }
+}
 
-
+#wordleTitle {
+    text-align: left;
 }
 
 .buttons {
     margin-right: 12px;
+}
+
+.AppHeader-module_menuRight__jUeYn {
+    display: flex;
 }
 
 // .AppHeader-module_menuLeft__iErDO {

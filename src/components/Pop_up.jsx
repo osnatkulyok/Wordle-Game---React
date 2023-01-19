@@ -15,6 +15,7 @@ export function PopUp() {
     const timer = setTimeout(() => {
       setShowPopUp(true);
     }, 1000);
+
     return () => clearTimeout(timer);
   }, []);
 

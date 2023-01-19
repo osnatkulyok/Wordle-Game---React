@@ -201,7 +201,11 @@ function Layout() {
                 ></path>
               </svg>
             </button>
-            {popupVisible ? <PopUp /> : null}
+            {popupVisible ? (
+              <button onClick={handlePopUp}>
+                <PopUp />
+              </button>
+            ) : null}
           </div>
         </header>
         {/* <WelcomeUser /> */}

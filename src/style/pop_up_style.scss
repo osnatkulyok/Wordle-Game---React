@@ -46,19 +46,23 @@
     animation: forwards;
     -webkit-animation: forwards;
     padding: 20px 30px;
-    opacity: 5.5;
+
     align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 380px;
-    height: 610px;
+    text-align: left;
+    width: 340px; // height: 610px;
+    // TODO let Gilad fix that unopaque color thing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
+
 
     h1 {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-weight: bold;
         font-size: 1.8rem;
+        color: black;
     }
 
     p {

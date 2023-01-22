@@ -17,7 +17,7 @@
 //               viewBox="0 0 16 16"
 //             >
 //               <path
-//                 fill-rule="evenodd"
+//                 fillRule="evenodd"
 //                 d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
 //               />
 //             </svg>
@@ -118,7 +118,7 @@ function Layout() {
   return (
     <div>
       <div className="App">
-        <header class="AppHeader-module_appHeader__1Ehyv wordle-app-header">
+        <header className="AppHeader-module_appHeader__1Ehyv wordle-app-header">
           <div>
             <button id="wins">
               <svg
@@ -136,14 +136,14 @@ function Layout() {
               </svg>
             </button>
           </div>
-          <div class="AppHeader-module_title__6sqs-" id="wordleTitle">
+          <div className="AppHeader-module_title__6sqs-" id="wordleTitle">
             Wordle
           </div>
-          <div class="AppHeader-module_menuRight__jUeYn">
+          <div className="AppHeader-module_menuRight__jUeYn">
             <button
               type="button"
               id="help-button"
-              class="AppHeader-module_icon__x7b46 "
+              className="AppHeader-module_icon__x7b46 "
               aria-label="Help"
             >
               <svg
@@ -151,7 +151,7 @@ function Layout() {
                 height="28"
                 viewBox="4 4 24 24"
                 width="28"
-                class="game-icon"
+                className="game-icon"
                 data-testid="icon-help"
               >
                 <path
@@ -163,7 +163,7 @@ function Layout() {
             <button
               type="button"
               id="statistics-button"
-              class="AppHeader-module_icon__x7b46 "
+              className="AppHeader-module_icon__x7b46 "
               aria-label="Statistics"
             >
               <svg
@@ -171,7 +171,7 @@ function Layout() {
                 height="28"
                 viewBox="4 4 24 24"
                 width="28"
-                class="game-icon"
+                className="game-icon"
                 data-testid="icon-statistics"
               >
                 <path
@@ -183,7 +183,7 @@ function Layout() {
             <button
               type="button"
               id="settings-button"
-              class="AppHeader-module_icon__x7b46 buttons"
+              className="AppHeader-module_icon__x7b46 buttons"
               aria-label="Settings"
               onClick={handlePopUp}
             >
@@ -192,7 +192,7 @@ function Layout() {
                 height="28"
                 viewBox="4 4 24 24"
                 width="28"
-                class="game-icon"
+                className="game-icon"
                 data-testid="icon-settings"
               >
                 <path

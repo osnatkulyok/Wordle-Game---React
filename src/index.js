@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import { App } from './App'
 //import './index css'
 import { AuthProvider } from './context/AuthProvider'
 // import { render } from 'react-dom'
 // import { Router } from 'react-router-dom'
-// import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// import { router } from './routes'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './components/route'
 
 // import { StrictMode } from 'react'
 // import { createRoot } from 'react-dom/client'
@@ -15,11 +15,11 @@ import { AuthProvider } from './context/AuthProvider'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <AuthProvider>
-      {/* <Router {...router}> */}
-      <App />
-      {/* </Router> */}
-    </AuthProvider>
+    {/* <AuthProvider> */}
+    {/* <Router {...router}> */}
+    <RouterProvider router={router} />
+    {/* </Router> */}
+    {/* </AuthProvider> */}
   </React.StrictMode>,
   document.getElementById('root'),
 )

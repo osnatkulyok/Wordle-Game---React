@@ -89,6 +89,8 @@ export function GameApp() {
     // }
   };
 
+  console.log("hiiii");
+
   return (
     <div className="myApp">
       {/* the 'value' thing is using api context in order to provide an access to the info anywhere inside the AppContext */}

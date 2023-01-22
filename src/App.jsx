@@ -12,7 +12,7 @@ import GameApp from "./GameApp";
 //the way to give an access/transform the props to the information I want, to each component in the project that place inside that func.
 export const AppContext = createContext();
 
-function App() {
+export function App() {
   return (
     <>
       <nav className="navbar">
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+// export default App;

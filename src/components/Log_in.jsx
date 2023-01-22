@@ -81,9 +81,8 @@ export function Log_in() {
           <p>
             {/*TODO-- put wordle game link here  */}
             {/* go go gooo to App.js */}
-
             {/* set a useState argument in order to set it to move to another page */}
-            <Link to="">Let's playyy</Link>
+            <Link to="/wordle-game">Let's playyy</Link>
           </p>
         </section>
       ) : (

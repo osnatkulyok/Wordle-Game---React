@@ -11,7 +11,7 @@ import { Log_in } from "./components/Log_in";
 //the way to give an access/transform the props to the information I want, to each component in the project that place inside that func.
 export const AppContext = createContext();
 
-function GameApp() {
+export function GameApp() {
   //setting a state to the board & keyBoard
   const [board, setBoard] = useState(boardDefalt);
   //useState will contain an obj because we keep follow 2 peaces of information.

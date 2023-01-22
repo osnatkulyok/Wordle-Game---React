@@ -3,6 +3,8 @@ import { useRef, useState, useEffect, useContext } from "react";
 import AuthContext from "../context/AuthProvider";
 import "../style/Login.css";
 import GameApp from "../GameApp";
+import { Route, NavLink, Link } from "react-router-dom";
+import { Pages } from "./route";
 
 export function Log_in() {
   // Destructure the setAuth function from the AuthContext
@@ -70,7 +72,6 @@ export function Log_in() {
 
   return (
     <>
-      console.log('ive got here');
       {/* TODO set a user name blassing */}
       <h1 className="blassTittle">WELCOME TO WORDLE GAME</h1>
       {success ? (
@@ -81,7 +82,8 @@ export function Log_in() {
             {/*TODO-- put wordle game link here  */}
             {/* go go gooo to App.js */}
 
-            <a href="../GameApp.jsx">Go to playyy</a>
+            {/* set a useState argument in order to set it to move to another page */}
+            <Link to="">Let's playyy</Link>
           </p>
         </section>
       ) : (

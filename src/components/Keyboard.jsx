@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useContext } from "react";
 import Key from "./Key";
-import { AppContext } from "../GameApp";
+import { AppContext } from "./GameApp";
 
 function Keyboard() {
   const { onSelectLetter, onDelete, onEnter } = useContext(AppContext);

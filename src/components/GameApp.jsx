@@ -1,11 +1,12 @@
-import "./style/App.css";
-import Board from "./components/Board";
-import Keyboard from "./components/Keyboard";
+import "../style/App.css";
+import Board from "./Board";
+import Keyboard from "./Keyboard";
 import { createContext, useState, useEffect } from "react";
-import { boardDefalt, generateWordSet } from "./words";
-import Layout from "./components/Layout";
-import { PopUp } from "./components/Pop_up";
-import { Log_in } from "./components/Log_in";
+import { boardDefalt, generateWordSet } from "../words";
+import Layout from "./Layout";
+import { PopUp } from "./Pop_up";
+import { Log_in } from "./Log_in";
+import { AllRights } from "./AllRights";
 // import 'core-js/fn/array/find'
 
 //the way to give an access/transform the props to the information I want, to each component in the project that place inside that func.
@@ -89,10 +90,16 @@ export function GameApp() {
     // }
   };
 
+  //TODO IF ALL LETTERS ARE GREEN A SUCCSESFUL PAGE
+
   console.log("hiiii");
 
   return (
     <div className="myApp">
+      <nav className="navbar">
+        <Layout />
+      </nav>
+
       {/* the 'value' thing is using api context in order to provide an access to the info anywhere inside the AppContext */}
       <AppContext.Provider
         value={{
@@ -111,6 +118,7 @@ export function GameApp() {
           <Keyboard />
         </div>
       </AppContext.Provider>
+      {/* <AllRights /> */}
     </div>
   );
 }

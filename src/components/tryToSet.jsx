@@ -324,7 +324,7 @@ import React from "react";
 import { useRef, useState, useEffect, useContext } from "react";
 import AuthContext from "../context/AuthProvider";
 import "../style/Login.css";
-import GameApp from "../GameApp";
+import GameApp from "./GameApp";
 
 export function Log_in() {
   // Destructure the setAuth function from the AuthContext

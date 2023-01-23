@@ -7,7 +7,8 @@ import "./style/App.css";
 import Board from "./components/Board";
 import Keyboard from "./components/Keyboard";
 import { boardDefalt, generateWordSet } from "./words";
-import GameApp from "./GameApp";
+import GameApp from "./components/GameApp";
+import { Winner } from "./components/Winner";
 
 //the way to give an access/transform the props to the information I want, to each component in the project that place inside that func.
 export const AppContext = createContext();
@@ -15,13 +16,13 @@ export const AppContext = createContext();
 export function App() {
   return (
     <>
-      <nav className="navbar">
+      <Winner />
+      {/* <nav className="navbar">
         <Layout />
       </nav>
       <PopUp />
-      <div>
-        <Log_in />
-      </div>
+
+      <Log_in /> */}
     </>
   );
 }

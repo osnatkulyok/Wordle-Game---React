@@ -6,7 +6,7 @@ import { AuthProvider } from './context/AuthProvider'
 // import { render } from 'react-dom'
 // import { Router } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
-import { router } from './components/route'
+import { router } from './api/route'
 
 // import { StrictMode } from 'react'
 // import { createRoot } from 'react-dom/client'

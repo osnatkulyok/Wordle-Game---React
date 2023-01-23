@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "../GameApp";
+import { AppContext } from "./GameApp";
 
 function Key({ keyValue, bigKey }) {
   const { onSelectLetter, onDelete, onEnter } = useContext(AppContext);

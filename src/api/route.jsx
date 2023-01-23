@@ -1,31 +1,9 @@
-// import React, { Component } from "react";
-// import { BrowserRouter, Route, Switch } from "react-router-dom";
-// import { createContext, useState, useEffect } from "react";
-
-// import { GameApp } from "../GameApp";
-
-// class Pages extends Component {
-//   render() {
-//     return (
-//       <BrowserRouter>
-//         <div>
-//           <Navigation>
-//             <Switch>
-//               <Route path="" component={GameApp} />
-//             </Switch>
-//           </Navigation>
-//         </div>
-//       </BrowserRouter>
-//     );
-//   }
-// }
-
 // export default Pages;
 import { createBrowserRouter } from "react-router-dom";
 import { App } from "../App";
 import React from "react";
 import { Log_in } from "../components/Log_in";
-import GameApp from "../GameApp";
+import GameApp from "../components/GameApp";
 
 // This code is creating a browser router using the createBrowserRouter function from the "react-router-dom" library
 // and importing the App, SignIn, Posts and Home components from different files.

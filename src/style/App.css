@@ -64,7 +64,7 @@ nav h1:hover {
 
 .game {
   width: 100vw;
-  height: calc(100vh - 170px);
+  height: calc(100vh - 112px);
   display: flex;
   align-items: center;
   padding-top: 50px;

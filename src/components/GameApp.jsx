@@ -1,5 +1,5 @@
 import "../style/App.css";
-import Board from "./Board";
+import { Board } from "./Board";
 import Keyboard from "./Keyboard";
 import { createContext, useState, useEffect } from "react";
 import { boardDefalt, generateWordSet } from "../words";
@@ -7,6 +7,7 @@ import Layout from "./Layout";
 import { PopUp } from "./Pop_up";
 import { Log_in } from "./Log_in";
 import { AllRights } from "./AllRights";
+import { Winner } from "./Winner";
 // import 'core-js/fn/array/find'
 
 //the way to give an access/transform the props to the information I want, to each component in the project that place inside that func.
@@ -23,6 +24,8 @@ export function GameApp() {
     curAttemptWord: "",
   });
   const [wordSet, setWordSet] = useState(new Set());
+  // use state hook to keep track of whether the pop-up should be displayed
+  const [showWinPopUp, setShowWinPopUp] = useState(false);
 
   const correctWord = "RIGHT";
   //will run one time only
@@ -89,7 +92,11 @@ export function GameApp() {
     //   currentWord += board[currentAttempt.attempt][i]
     // }
     // if (wordSet.has(currentWord.toLowerCase())) {
-
+    if (currentAttempt.curAttemptWord === correctWord) {
+      console.log("winnnnnnn");
+      setShowWinPopUp(!showWinPopUp);
+      //TODO if win SHOW POP-UP
+    }
     setCurrentAttempt({
       attempt: currentAttempt.attempt + 1,
       letterPosition: 0,
@@ -126,6 +133,17 @@ export function GameApp() {
           <Board />
           <Keyboard />
         </div>
+        {showWinPopUp ? (
+          <button
+            onClick={() => {
+              setShowWinPopUp(!showWinPopUp);
+            }}
+          >
+            <Winner />
+          </button>
+        ) : null}
+
+        {/* TODO FOOTER */}
       </AppContext.Provider>
       {/* <AllRights /> */}
     </div>

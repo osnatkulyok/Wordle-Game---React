@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Letter from './Letter'
+import React, { useState } from "react";
+import Letter from "./Letter";
 
-function Board() {
+export function Board() {
   return (
     <div className="board">
       {/* letterPosition = place in the line
@@ -49,7 +49,7 @@ function Board() {
         <Letter letterPosition={4} attempValue={5} />
       </div>
     </div>
-  )
+  );
 }
 
-export default Board
+// export default Board

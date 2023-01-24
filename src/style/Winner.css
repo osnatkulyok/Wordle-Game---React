@@ -1,9 +1,20 @@
-div {
+.winPopUp {
   background-image: url("../img/winners-image.jpg");
   background-size: cover;
-  background-position: center;
-  width: 200px;
-  height: 220px;
+  border-radius: 700px;
+  box-shadow: 0 6px 23px rgba(0, 0, 0, 0.8);
+  animation: forwards;
+  -webkit-animation: forwards;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 660px;
+  height: 590px;
+  -webkit-border-radius: 700px;
+  -moz-border-radius: 700px;
+  -ms-border-radius: 700px;
+  -o-border-radius: 700px;
 }
 
 .cancelAdd {
@@ -20,4 +31,6 @@ div {
 
 .playAgain {
   color: rgb(237, 218, 49);
+  margin-top: 315px;
+  margin-left: 280px;
 }/*# sourceMappingURL=Winner.css.map */

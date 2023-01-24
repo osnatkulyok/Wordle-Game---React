@@ -16,7 +16,6 @@ export const AppContext = createContext();
 export function App() {
   return (
     <>
-      {/* <Winner /> */}
       <nav className="navbar">
         <Layout />
       </nav>

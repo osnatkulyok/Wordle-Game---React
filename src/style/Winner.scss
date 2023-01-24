@@ -1,4 +1,26 @@
-img {
-    width: 100px;
-    height: 100px;
+div {
+    background-image: url('../img/winners-image.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 220px;
+
+}
+
+.cancelAdd {
+    border: none;
+    background-color: transparent;
+    float: right;
+    padding: 8px;
+    margin: 0;
+
+    svg {
+        width: 25px;
+        height: 25px;
+
+    }
+}
+
+.playAgain {
+    color: rgb(237, 218, 49);
 }

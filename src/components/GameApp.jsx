@@ -19,6 +19,8 @@ export function GameApp() {
   const [currentAttempt, setCurrentAttempt] = useState({
     attempt: 0,
     letterPosition: 0,
+    // count correct letter in attempt.
+    curAttemptWord: "",
   });
   const [wordSet, setWordSet] = useState(new Set());
 
@@ -40,9 +42,10 @@ export function GameApp() {
       setCurrentAttempt({
         ...currentAttempt,
         letterPosition: currentAttempt.letterPosition + 1,
+        curAttemptWord: currentAttempt.curAttemptWord + keyValue,
       });
     } else if (currentAttempt.letterPosition > 4) {
-      console.log("DONE");
+      console.log(currentAttempt.curAttemptWord);
     } else {
       const newBoard = [...board];
       newBoard[currentAttempt.attempt][currentAttempt.letterPosition] =
@@ -51,7 +54,9 @@ export function GameApp() {
       setCurrentAttempt({
         ...currentAttempt,
         letterPosition: currentAttempt.letterPosition + 1,
+        curAttemptWord: currentAttempt.curAttemptWord + keyValue,
       });
+      // console.log(currentAttempt.curAttemptWord);
     }
   };
 
@@ -63,13 +68,16 @@ export function GameApp() {
     setCurrentAttempt({
       ...currentAttempt,
       letterPosition: currentAttempt.letterPosition - 1,
+      //TODO delete the last
+      curAttemptWord: currentAttempt.curAttemptWord.slice(0, -1),
     });
   };
+  console.log(currentAttempt.curAttemptWord);
 
   //   alert('HEY BUDDY YOU HAVE REACHED A WORD')
 
   const onEnter = () => {
-    console.log(currentAttempt.letterPosition);
+    // console.log(currentAttempt.letterPosition);
     if (currentAttempt.letterPosition !== 5) return;
 
     // for (const word of wordSet) {
@@ -81,18 +89,19 @@ export function GameApp() {
     //   currentWord += board[currentAttempt.attempt][i]
     // }
     // if (wordSet.has(currentWord.toLowerCase())) {
+
     setCurrentAttempt({
       attempt: currentAttempt.attempt + 1,
       letterPosition: 0,
+      curAttemptWord: "",
     });
+
     // } else {
     //   alert('Word not found')
     // }
   };
 
   //TODO IF ALL LETTERS ARE GREEN A SUCCSESFUL PAGE
-
-  console.log("hiiii");
 
   return (
     <div className="myApp">

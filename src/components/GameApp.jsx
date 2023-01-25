@@ -23,17 +23,32 @@ export function GameApp() {
     // count correct letter in attempt.
     curAttemptWord: "",
   });
-  const [wordSet, setWordSet] = useState(new Set());
+  // const [wordSet, setWordSet] = useState(new Set());
   // use state hook to keep track of whether the pop-up should be displayed
   const [showWinPopUp, setShowWinPopUp] = useState(false);
 
-  const correctWord = "RIGHT";
-  //will run one time only
-  useEffect(() => {
-    generateWordSet().then((words) => {
-      setWordSet(words.wordSet);
-    });
-  }, []);
+  const [correctWord, setCorrectWord] = useState("RIGHT");
+
+  // //will run one time only
+  // useEffect(() => {
+  //   generateWordSet().then((words) => {
+  //     setWordSet(words.wordSet);
+  //   });
+  // }, []);
+  const fetchRandomWord = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/random-word");
+      const data = await response.json();
+      return data.word;
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  const onSelectRandomWord = async () => {
+    const randomWord = await fetchRandomWord();
+    setCorrectWord(randomWord);
+    console.log("youve got this");
+  };
 
   const onSelectLetter = (keyValue) => {
     if (currentAttempt.letterPosition === 4) {
@@ -113,7 +128,7 @@ export function GameApp() {
   return (
     <div className="myApp">
       <nav className="navbar">
-        <Layout />
+        <Layout onSelectRandomWord={onSelectRandomWord} />
       </nav>
 
       {/* the 'value' thing is using api context in order to provide an access to the info anywhere inside the AppContext */}
@@ -127,6 +142,7 @@ export function GameApp() {
           onDelete,
           onEnter,
           correctWord,
+          onSelectRandomWord,
         }}
       >
         <div className="game">

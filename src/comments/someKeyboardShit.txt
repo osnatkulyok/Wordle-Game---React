@@ -1,0 +1,25 @@
+export function GameApp() {
+  // ... other code
+
+  const handleKeyPress = (event: KeyboardEvent) => {
+    // get the context
+    const { onSelectLetter, onDelete, onEnter } = useContext(AppContext);
+    // check if the key is enter or delete
+    if (event.key === "Enter") {
+      onEnter();
+    } else if (event.key === "Backspace") {
+      onDelete();
+    } else if(event.key.length === 1) {
+      onSelectLetter(event.key);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
+  // ... other code
+}

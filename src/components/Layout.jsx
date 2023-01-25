@@ -8,7 +8,7 @@ import { useState } from "react";
 //the click can justset it to true or false as a flag
 //NOW we need to set it back or find another way exept condition. IN OTRDER to stand by its own.
 
-function Layout() {
+function Layout({ onSelectRandomWord }) {
   const [popupVisible, setPopupVisible] = useState(false);
 
   const handlePopUp = () => {
@@ -64,7 +64,7 @@ function Layout() {
               type="button"
               id="statistics-button"
               className="AppHeader-module_icon__x7b46 "
-              aria-label="Statistics"
+              onClick={onSelectRandomWord}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

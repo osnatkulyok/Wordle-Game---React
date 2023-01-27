@@ -6,7 +6,7 @@ import { boardDefalt, generateWordSet } from "../words";
 import Layout from "./Layout";
 import { PopUp } from "./Pop_up";
 import { Log_in } from "./Log_in";
-import { AllRights } from "./AllRights";
+import { Footer } from "./Footer";
 import { Winner } from "./Winner";
 // import 'core-js/fn/array/find'
 
@@ -161,7 +161,7 @@ export function GameApp() {
 
         {/* TODO FOOTER */}
       </AppContext.Provider>
-      {/* <AllRights /> */}
+      <Footer />
     </div>
   );
 }

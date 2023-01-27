@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "./GameApp";
 
 function Letter({ letterPosition, attempValue }) {
@@ -15,17 +15,25 @@ function Letter({ letterPosition, attempValue }) {
     currentAttempt.attempt > attempValue &&
     (correct ? "correct" : almost ? "almost" : "error");
 
+  //TODO why doesnt it work?????
   let isSelected = false;
 
-  if (
-    letterPosition == currentAttempt.letterPosition &&
-    attempValue == currentAttempt.attempt
-  ) {
-    isSelected = true;
+  function handleClick() {
+    if (
+      letterPosition == currentAttempt.letterPosition &&
+      attempValue == currentAttempt.attempt
+    ) {
+      isSelected = true;
+      console.log(isSelected);
+    }
   }
-  // console.log(letter);
+
   return (
-    <div className={isSelected ? "letter selected" : "letter"} id={letterState}>
+    <div
+      className={isSelected ? "letter selected" : "letter"}
+      onClick={handleClick}
+      id={letterState}
+    >
       {letter}
     </div>
   );

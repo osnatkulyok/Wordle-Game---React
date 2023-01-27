@@ -76,7 +76,7 @@ nav h1 {
 
 .game {
   width: 100vw;
-  height: calc(100vh - 112px);
+  height: calc(100vh - 170px);
   display: flex;
   align-items: center;
   padding-top: 50px;
@@ -105,17 +105,32 @@ nav h1 {
   border: 1.5px solid rgb(231, 212, 212);
   margin: 5px;
   display: grid;
-  place-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  place-items: center center;
+  //font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 30px;
   font-weight: bolder;
   color: white;
-  filter: drop-shadow(3px 3px 3px);
-  -webkit-filter: drop-shadow(3px 3px 3px);
+  filter: drop-shadow(2px 2px 2px white);
+  -webkit-filter: drop-shadow(2px 2px 2px white);
+  border-radius: 10px;
+  box-shadow: 0 0 3px #dee8ee;
+
+  // /*setvalueinpixels*/
+  // &:focus {
+  //   outline: none;
+  //   box-shadow: 2px #white;
+  //   background-color: aqua;
+  // }
 }
 
 .selected {
-  background-color: rgb(90, 25, 25)
+  border: 2px solid rgb(90, 25, 25);
+  // background-color: aqua;
+  // filter: none;
+  // -webkit-filter: none;
+
+
 }
 
 #correct {
@@ -133,7 +148,9 @@ nav h1 {
 .keyboard {
   width: 700px;
   height: 300px;
-  margin-top: 60px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+
 }
 
 .line1 {
@@ -163,7 +180,7 @@ nav h1 {
 
 .key {
   width: 50px;
-  height: 65px;
+  height: 55px;
   margin: 5px;
   // border: 2px solid black;
   border-radius: 4px;

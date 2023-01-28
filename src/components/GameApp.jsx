@@ -35,21 +35,33 @@ export function GameApp() {
   //     setWordSet(words.wordSet);
   //   });
   // }, []);
-  const fetchRandomWord = async () => {
+  // function getWord() {
+  //   console.log("youve got so far");
+  //   // send an HTTP GET request to the '/getWord' endpoint
+  //   fetch("http://localhost:3000/getWord")
+  //     // parse the response as text
+  //     .then((response) => response.text())
+  //     // update the innerHTML of the element with the id 'word'
+  //     .then((word) => {
+  //       document.getElementById("word").innerHTML = word;
+  //     });
+  // }
+  async function getWord() {
     try {
-      const response = await fetch("http://localhost:3000/random-word");
-      const data = await response.json();
-      return data.word;
-    } catch (err) {
-      console.error(err);
+      const response = await fetch("http://localhost:3000/getWord");
+      console.log(response);
+      const randomWord = await response.text();
+      console.log(response.text());
+      return randomWord;
+    } catch (error) {
+      console.error(error);
     }
-  };
-  const onSelectRandomWord = async () => {
-    const randomWord = await fetchRandomWord();
-    setCorrectWord(randomWord);
-    console.log("youve got this");
-  };
-
+  }
+  function onSelectRandomWord() {
+    const randomWord = getWord();
+    console.log(randomWord);
+    // use the randomWord as a parameter here
+  }
   const onSelectLetter = (keyValue) => {
     if (currentAttempt.letterPosition === 4) {
       console.log("DONE");

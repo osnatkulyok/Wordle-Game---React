@@ -12,14 +12,21 @@ import { router } from './api/route'
 // import { createRoot } from 'react-dom/client'
 // import { BrowserRouter } from 'react-router-dom'
 
+// root.render(
+//   <React.StrictMode>
+//     {/* <AuthProvider> */}
+//     {/* <Router {...router}> */}
+//     <RouterProvider router={router} />
+//     {/* </Router> */}
+//     {/* </AuthProvider> */}
+//   </React.StrictMode>,
+//   document.getElementById('root'),
+// )
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    {/* <AuthProvider> */}
-    {/* <Router {...router}> */}
     <RouterProvider router={router} />
-    {/* </Router> */}
-    {/* </AuthProvider> */}
   </React.StrictMode>,
   document.getElementById('root'),
 )

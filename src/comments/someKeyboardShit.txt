@@ -23,3 +23,83 @@ export function GameApp() {
 
   // ... other code
 }
+
+
+
+ async function getWord() {
+    try {
+      const response = await fetch("http://localhost:3000/getWord");
+      console.log(response);
+      const randomWord = await response.text();
+      console.log(response.text());
+      return randomWord;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  function onSelectRandomWord() {
+    const randomWord = getWord();
+    console.log(randomWord);
+    // use the randomWord as a parameter here
+  }
+
+ // function getWord() {
+  //   console.log("youve got so far");
+  //   // send an HTTP GET request to the '/getWord' endpoint
+  //   fetch("http://localhost:3000/getWord")
+  //     // parse the response as text
+  //     .then((response) => response.text())
+  //     // update the innerHTML of the element with the id 'word'
+  //     .then((word) => {
+  //       document.getElementById("word").innerHTML = word;
+  //     });
+  // }
+
+  import React, { useState } from 'react';
+import { generateWordSet } from './board-utils';
+
+const App = () => {
+  // State to store the word set
+  const [wordSet, setWordSet] = useState<string[]>([]);
+
+  // State to store the loading status
+  const [loading, setLoading] = useState(false);
+
+  // Function to handle button click
+  const handleClick = () => {
+    // Set loading to true
+    setLoading(true);
+
+    // Fetch the word set
+    generateWordSet().then((words) => {
+      // Set the word set
+      setWordSet(words.wordSet);
+
+      // Set loading to false
+      setLoading(false);
+    });
+  };
+
+  return (
+    <div>
+      {/* Button to trigger fetch */}
+      <button onClick={handleClick}>Fetch Words</button>
+
+      {/* Show loading message while fetching */}
+      {loading ? <p>Loading...</p> : 
+      
+      // Map each word in wordSet to a p element
+      ...wordSet.map(word => <p key={word}>{word}</p>)}
+    </div>
+  );
+};
+
+export default App;
+
+
+//will run one time only
+  useEffect(() => {
+    generateWordSet().then((words) => {
+      setWordSet(words.wordSet);
+    });
+  }, []);

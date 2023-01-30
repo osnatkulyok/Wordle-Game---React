@@ -18,7 +18,7 @@ function Letter({ letterPosition, attempValue }) {
   //TODO why doesnt it work?????
   let isSelected = false;
 
-  function handleClick() {
+  function handleFocusClick() {
     if (
       letterPosition == currentAttempt.letterPosition &&
       attempValue == currentAttempt.attempt
@@ -30,8 +30,8 @@ function Letter({ letterPosition, attempValue }) {
 
   return (
     <div
+      onClick={handleFocusClick}
       className={isSelected ? "letter selected" : "letter"}
-      onClick={handleClick}
       id={letterState}
     >
       {letter}

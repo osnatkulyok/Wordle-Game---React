@@ -44,7 +44,7 @@ export function Log_in() {
   //will check any other try to log-in
   function login(user, password) {
     if (users[user] && users[user] === password) {
-      console.log("login successfully");
+      console.log(`${user} login successfully`);
       // Set the success status to true
       setSuccess(true);
     } else {

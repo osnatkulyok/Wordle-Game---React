@@ -1,8 +1,5 @@
-import wordBank from './words-bank.txt'
+import wordBank from '../words-bank'
 
-//creating the guess word board
-//actually it's like 6 lines of an array
-//all that consept it's like the metrix thing
 export const boardDefalt = [
   ['', '', '', '', ''],
   ['', '', '', '', ''],

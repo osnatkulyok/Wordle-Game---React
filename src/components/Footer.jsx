@@ -4,6 +4,7 @@ import "../style/footer.css";
 export function Footer() {
   return (
     <div className="footer">
+      <button className="signUp">sign-up</button>
       <h2>ALL RIGHTS RESERVED TO OSNAT KULYOK</h2>
       {/* <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -6,7 +6,7 @@ import { createContext, useState, useEffect } from "react";
 import "./style/App.css";
 import Board from "./components/Board";
 import Keyboard from "./components/Keyboard";
-import { boardDefalt, generateWordSet } from "./words";
+import { boardDefalt, generateWordSet } from "./components/words";
 import GameApp from "./components/GameApp";
 // import { Winner } from "./components/Winner";
 

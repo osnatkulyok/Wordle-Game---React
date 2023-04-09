@@ -1,14 +1,11 @@
 import "../style/App.css";
 import { Board } from "./Board";
 import Keyboard from "./Keyboard";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 import { boardDefalt, generateWordSet } from "./words";
 import Layout from "./Layout";
-import { PopUp } from "./Pop_up";
-import { Log_in } from "./Log_in";
 import { Footer } from "./Footer";
 import { Winner } from "./Winner";
-// import 'core-js/fn/array/find'
 
 //the way to give an access/transform the props to the information I want, to each component in the project that place inside that func.
 export const AppContext = createContext();
@@ -25,14 +22,13 @@ export function GameApp() {
     // count correct letter in attempt.
     curAttemptWord: "",
   });
-  // const [wordSet, setWordSet] = useState(new Set());
   // use state hook to keep track of whether the pop-up should be displayed
   const [showWinPopUp, setShowWinPopUp] = useState(false);
   // State to store the word set
-  // const [correctWord, setCorrectWord] = useState("RIGHT");
-  const [correctWord, setCorrectWord] = useState([]);
+  const [correctWord, setCorrectWord] = useState("RIGHT");
+  // const [correctWord, setCorrectWord] = useState([]);
   // State to store the loading status
-  const [loading, setLoading] = useState(false);
+  const [, setLoading] = useState(false);
   function handleChooseWordButton() {
     console.log("hey apiiiii");
     // Set loading to true
@@ -61,7 +57,6 @@ export function GameApp() {
         curAttemptWord: currentAttempt.curAttemptWord + keyValue,
       });
     } else if (currentAttempt.letterPosition > 4) {
-      // console.log(currentAttempt.curAttemptWord);
     } else {
       const newBoard = [...board];
       newBoard[currentAttempt.attempt][currentAttempt.letterPosition] =
@@ -72,7 +67,6 @@ export function GameApp() {
         letterPosition: currentAttempt.letterPosition + 1,
         curAttemptWord: currentAttempt.curAttemptWord + keyValue,
       });
-      // console.log(currentAttempt.curAttemptWord);
     }
   };
 
@@ -93,18 +87,7 @@ export function GameApp() {
   //   alert('HEY BUDDY YOU HAVE REACHED A WORD')
 
   const onEnter = () => {
-    // console.log(currentAttempt.letterPosition);
     if (currentAttempt.letterPosition !== 5) return;
-
-    // for (const word of wordSet) {
-    //   console.log(word)
-    // }
-
-    // let currentWord = ''
-    // for (let i = 0; i < 5; i++) {
-    //   currentWord += board[currentAttempt.attempt][i]
-    // }
-    // if (wordSet.has(currentWord.toLowerCase())) {
     if (currentAttempt.curAttemptWord === correctWord) {
       console.log("winnnnnnn");
       setShowWinPopUp(!showWinPopUp);
@@ -115,10 +98,6 @@ export function GameApp() {
       letterPosition: 0,
       curAttemptWord: "",
     });
-
-    // } else {
-    //   alert('Word not found')
-    // }
   };
 
   //TODO IF ALL LETTERS ARE GREEN A SUCCSESFUL PAGE

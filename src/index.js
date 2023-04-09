@@ -1,13 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { App } from './App'
+
 //import './index css'
-import { AuthProvider } from './context/AuthProvider'
 // import { render } from 'react-dom'
 // import { Router } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './api/route'
-
 // import { StrictMode } from 'react'
 // import { createRoot } from 'react-dom/client'
 // import { BrowserRouter } from 'react-router-dom'
